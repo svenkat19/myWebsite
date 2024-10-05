@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+/* App.css */
+.main {
+  background-color: rgb(6, 1, 31);  /* Set the background color to black */
+  min-height: 100vh;        /* Ensure it covers the full viewport height */
+  color: white;             /* Optional: Set text color to white for better visibility */
+}

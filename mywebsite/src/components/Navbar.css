@@ -1,0 +1,33 @@
+/* Navbar.css */
+
+/* Translucent navbar */
+.navbar-translucent {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+/* Dropdown menu styles */
+.navbar .dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.8);  /* Black with 80% opacity */
+  border: none;
+  opacity: 0;                            /* Initially invisible */
+  visibility: hidden;                    /* Ensures the dropdown is hidden */
+  transform: translateY(-10px);          /* Slightly offset upwards for the effect */
+  transition: opacity 0.3s ease, transform 0.3s ease;  /* Smooth fade-in transition */
+}
+
+/* Show the dropdown with fade-in effect */
+.navbar .dropdown-menu.show {
+  opacity: 1;                            /* Fully visible */
+  visibility: visible;                   /* Ensure it's visible */
+  transform: translateY(0);              /* Move to its original position */
+}
+
+/* Style dropdown items */
+.navbar .dropdown-item {
+  color: white;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);  /* Light hover effect */
+}

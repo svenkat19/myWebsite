@@ -42,3 +42,7 @@
   min-height: 100vh;        /* Ensure it covers the full viewport height */
   color: white;             /* Optional: Set text color to white for better visibility */
 }
+
+.navbar{
+  color: #00ff00;
+}

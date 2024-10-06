@@ -1,4 +1,12 @@
-/* Navbar.css */
+.nav-link-container {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+}
+
+.nav-link-container img {
+  margin-right: 0.5rem; /* Add some space between the icon and the text */
+}
+
 .navbar {
   background-color: rgba(255, 255, 255, 0.1); /* Optional: Translucent background */
 }
@@ -9,9 +17,32 @@
   color: #00ff00 !important;  /* Force green text color */
   background-attachment: rgba(255, 255, 255, 0.1);
 }
-.dropdown-menu{
-  background-color: rgba(255, 255, 255, 0.1);
+
+.dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.1); /* Translucent background */
+  backdrop-filter: blur(2px); /* Optional: Add blur for a more translucent effect */
+  opacity: 1; /* Keep overall element at full opacity */
 }
+
+.dropdown-menu .dropdown-item {
+  color: #00ff00 !important; /* Keep text fully visible */
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.1); /* Background opacity */
+  z-index: -1; /* Keep background behind the text */
+}
+
 .navbar .nav-link.disabled {
   color: gray !important; /* Keep disabled links gray */
+}
+
+img {
+  width: 1.5rem;
 }

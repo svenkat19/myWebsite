@@ -38,10 +38,10 @@
 }
 /* App.css */
 .main {
-  background-color: rgb(6, 1, 31);  /* Set the background color to black */
+  background-color: black;  /* Set the background color to black */
   min-height: 100vh;        /* Ensure it covers the full viewport height */
   color: white;             /* Optional: Set text color to white for better visibility */
-  background-image: url('../public/pexels-minan1398-813269.jpg');
+  /* background-image: url('../public/pexels-minan1398-813269.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -4,7 +4,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Home from './components/Home';
-
+import Resume from './components/Resume';
+import Projects from './components/Projects';
 function App(): React.ReactElement {
   return (
     <div className='main'>
@@ -13,6 +14,8 @@ function App(): React.ReactElement {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </BrowserRouter>
     </div>

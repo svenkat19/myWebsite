@@ -1,33 +1,52 @@
+/* Navbar container styles */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.1); /* Optional: Translucent background */
+}
+
+/* Navigation link container */
 .nav-link-container {
   display: flex;
   align-items: center; /* Align icon and text vertically */
 }
 
+/* Add space between icon and text */
 .nav-link-container img {
   margin-right: 0.5rem; /* Add some space between the icon and the text */
 }
 
-.navbar {
-  background-color: rgba(255, 255, 255, 0.1); /* Optional: Translucent background */
+/* Navigation link styles */
+.nav-link {
+  color: white; /* Set default text color to white */
+  text-decoration: none;
+  padding: 10px 15px; /* Padding for a box-like appearance */
+  margin-right: 1.5rem; /* Increase space between buttons */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Remove other property transitions */
+  background-color: transparent; /* Ensure consistent background before hover */
+  border-radius: 5px; /* Ensure consistent rounded corners */
+  font-weight: bold; /* Set font weight to bold by default to avoid shifting */
 }
 
-.navbar .navbar-brand, 
-.navbar .nav-link, 
-.navbar .dropdown-item {
-  color: #00ff00 !important;  /* Force green text color */
-  background-attachment: rgba(255, 255, 255, 0.1);
+/* Hover effect: Box becomes white, text becomes black */
+.nav-link:hover {
+  background-color: white; /* Box turns white */
+  color: black !important; /* Force the text color to black */
+  /* No font-weight change here */
+  border-radius: 5px; /* Keep the border radius consistent */
 }
 
+/* Dropdown menu styles */
 .dropdown-menu {
   background-color: rgba(255, 255, 255, 0.1); /* Translucent background */
   backdrop-filter: blur(2px); /* Optional: Add blur for a more translucent effect */
   opacity: 1; /* Keep overall element at full opacity */
 }
 
+/* Dropdown menu item styles */
 .dropdown-menu .dropdown-item {
-  color: #00ff00 !important; /* Keep text fully visible */
+  color: white !important; /* Keep text fully visible */
 }
 
+/* Background for dropdown menu */
 .dropdown-menu::before {
   content: '';
   position: absolute;
@@ -39,10 +58,12 @@
   z-index: -1; /* Keep background behind the text */
 }
 
+/* Disabled link styles */
 .navbar .nav-link.disabled {
   color: gray !important; /* Keep disabled links gray */
 }
 
+/* Icon size in navigation links */
 img {
   width: 1.5rem;
 }

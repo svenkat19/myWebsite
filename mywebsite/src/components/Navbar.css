@@ -1,6 +1,6 @@
 /* Navbar container styles */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.1); /* Optional: Translucent background */
+  background-color: rgba(255, 255, 255, 0); /* Optional: Translucent background */
 }
 
 /* Navigation link container */
@@ -67,3 +67,67 @@
 img {
   width: 1.5rem;
 }
+
+.navbar-right {
+  margin-left: auto;
+  display: flex;
+  gap: 15px; /* Space between the icons */
+  align-items: center; /* Align icons vertically */
+}
+
+/* .navbar-right {
+  margin-top: 0.5rem;
+}
+
+.navbar-right a {
+  margin: 0 15px;
+} */
+
+.light-icon {
+  color: white; /* Set the icon color to white or any light color */
+  transition: color 0.3s, text-shadow 0.3s, filter 0.3s, transform 0.3s; /* Smooth transition */
+  text-shadow: 
+    0 1px 0 rgba(0, 0, 0, 0.5), /* Bottom shadow */
+    0 2px 0 rgba(0, 0, 0, 0.4), /* Slightly lower shadow */
+    0 3px 0 rgba(0, 0, 0, 0.3); /* Further shadow for depth */
+}
+
+.navbar-right a:hover .light-icon {
+  color: #007bff; /* Change the icon color on hover */
+  filter: drop-shadow(0 0 5px rgba(0, 123, 255, 1)); /* Blue glow effect */
+  transform: scale(1.2); /* Magnification effect on hover */
+}
+
+/* Flexbox for the navbar content */
+.navbar-content {
+  display: flex;
+  justify-content: space-between;  /* Space between left (logo) and right (links) */
+  align-items: center;
+  width: 100%;
+}
+
+/* Left-aligned logo */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 50px; /* Adjust as needed */
+  width: auto;
+  margin-left: 10px;
+}
+
+/* Right-aligned social links */
+.navbar-right {
+  display: flex;
+  gap: 15px;  /* Space between the icons */
+  align-items: center;
+  margin-right: 10px; /* Adjust to add space from the right */
+}
+
+/* Translucent background styling for the navbar
+.navbar-translucent {
+  background-color: rgba(255, 255, 255, 0.8); 
+  padding: 10px 20px;
+}*/

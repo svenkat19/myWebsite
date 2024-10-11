@@ -7,17 +7,20 @@ const Home = () => {
   return (
     <>
       <div className='satisfy-regular'>
-        
-        <div className="container" style={{ marginTop: '15rem' }}>
-          <h1>Hey there</h1>
-          <h1>Shashank Venkat here.</h1>
+        <div className="container flex-container" style={{ marginTop: '1rem' }}>
+          <div>
+            <h1>Hey there</h1>
+            <h1>Shashank Venkat here.</h1>
+          </div>
+          <img 
+            src="tTBWByQwdtDAxTvZT4ADi-transformed.png" 
+            style={{height: '35rem', width: '26rem', marginLeft: '30rem'}} 
+            alt="Profile" 
+          />
         </div>
-        <div>
-<img src="tTBWByQwdtDAxTvZT4ADi-transformed.png" style={{height:'20rem', width:'19rem'}} alt="" />
-        </div>
-        
       </div>
-      <div className="container find-me">
+      
+      {/* <div className="container find-me">
         <p>WANNA CONNECT?</p>
         <div className="social-links">
           <a href="https://github.com/svenkat19" target="_blank" rel="noopener noreferrer">
@@ -30,7 +33,7 @@ const Home = () => {
             <FontAwesomeIcon icon={faFacebook} size="2x" className="light-icon" />
           </a>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

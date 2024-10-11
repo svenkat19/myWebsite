@@ -5,7 +5,7 @@
     transform: translateX(-50%);
     text-align: center;
     padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: A darker background for better contrast */
+    /* background-color: rgba(0, 0, 0, 0.5); Optional: A darker background for better contrast */
     border-radius: 10px; /* Optional: Rounded corners */
   }
   
@@ -30,5 +30,18 @@
     color: #007bff; /* Change the icon color on hover */
     filter: drop-shadow(0 0 5px rgba(0, 123, 255, 1)); /* Blue glow effect */
     transform: scale(1.2); /* Magnification effect on hover */
+  }
+  
+  .flex-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .find-me {
+    text-align: center;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
   }
   

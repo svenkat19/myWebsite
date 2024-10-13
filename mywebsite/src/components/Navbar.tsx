@@ -8,7 +8,6 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-translucent">
       <div className="container-fluid">
         <div className="navbar-content">
-          {/* Image on the left */}
           <div className="navbar-left">
             <img 
               src='shashank-venkat-high-resolution-logo-white-transparent.png' 
@@ -17,8 +16,6 @@ const Navbar = () => {
               style={{width:'10rem',height:'2rem'}}
             />
           </div>
-          
-          {/* Social Links on the right */}
           <div className="navbar-right">
             <a href="https://github.com/svenkat19" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faGithub} size="2x" className="light-icon" />

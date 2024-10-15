@@ -4,38 +4,61 @@ import './Home.css';
 const Home = () => {
   return (
     <>
-      <div className='satisfy-regular'>
+      {/* First Section: Introduction */}
+      <div className="satisfy-regular">
         <div className="container flex-container" style={{ marginTop: '1rem' }}>
           <div>
-            <h1>Hey there</h1>
+            <h1>Hey there,</h1>
             <h1>Shashank Venkat here.</h1>
           </div>
           <img 
             src="tTBWByQwdtDAxTvZT4ADi-transformed.png" 
-            style={{height: '35rem', width: '26rem', marginLeft: '30rem'}} 
+            style={{ height: '35rem', width: '26rem', marginLeft: '30rem' }} 
             alt="Profile" 
           />
         </div>
       </div>
-      <section className="about">
-      <div>
-      currently working as an Application Developer and Analyst at Caterpillar in Bangalore. I hold a Bachelor’s degree in Technology from VIT, Vellore. My professional expertise spans across Machine Learning, Deep Learning, and Fullstack Web Development, where I have developed a strong foundation in creating intelligent systems and scalable web applications. With a passion for leveraging technology to solve complex problems, I have consistently contributed to a variety of impactful projects, both in the realm of artificial intelligence and software development.
-      </div>
+
+      {/* Second Section: About */}
+      <section className="about full-page">
+        <div className="content">
+          <h2>About Me</h2>
+          <p>
+            I’m currently working as an Application Developer and Analyst at Caterpillar in Bangalore.
+            I hold a Bachelor’s degree in Technology from VIT, Vellore. My expertise spans Machine Learning, Deep Learning,
+            and Fullstack Web Development, where I’ve contributed to impactful projects and developed scalable applications.
+          </p>
+        </div>
       </section>
-      <section className="skills">
-      currently working as an Application Developer and Analyst at Caterpillar in Bangalore. I hold a Bachelor’s degree in Technology from VIT, Vellore. My professional expertise spans across Machine Learning, Deep Learning, and Fullstack Web Development, where I have developed a strong foundation in creating intelligent systems and scalable web applications. With a passion for leveraging technology to solve complex problems, I have consistently contributed to a variety of impactful projects, both in the realm of artificial intelligence and software development.
 
-
+      {/* Third Section: Skills */}
+      <section className="skills full-page">
+        <div className="content">
+          <h2>Skills</h2>
+          <p>
+            My skillset includes Machine Learning, Deep Learning, Fullstack Web Development, and creating intelligent, scalable solutions using technologies like Python, TensorFlow, React, Node.js, and more.
+          </p>
+        </div>
       </section>
-      <section className="experience">
-      currently working as an Application Developer and Analyst at Caterpillar in Bangalore. I hold a Bachelor’s degree in Technology from VIT, Vellore. My professional expertise spans across Machine Learning, Deep Learning, and Fullstack Web Development, where I have developed a strong foundation in creating intelligent systems and scalable web applications. With a passion for leveraging technology to solve complex problems, I have consistently contributed to a variety of impactful projects, both in the realm of artificial intelligence and software development.
 
-
+      {/* Fourth Section: Experience */}
+      <section className="experience full-page">
+        <div className="content">
+          <h2>Experience</h2>
+          <p>
+            At Caterpillar, I specialize in Python programming and intelligence-related tasks, while also working on fullstack development. Previously, I have worked on a variety of impactful projects in AI and web development.
+          </p>
+        </div>
       </section>
-      <section className="projects">
-      currently working as an Application Developer and Analyst at Caterpillar in Bangalore. I hold a Bachelor’s degree in Technology from VIT, Vellore. My professional expertise spans across Machine Learning, Deep Learning, and Fullstack Web Development, where I have developed a strong foundation in creating intelligent systems and scalable web applications. With a passion for leveraging technology to solve complex problems, I have consistently contributed to a variety of impactful projects, both in the realm of artificial intelligence and software development.
 
-
+      {/* Fifth Section: Projects */}
+      <section className="projects full-page">
+        <div className="content">
+          <h2>Projects</h2>
+          <p>
+            Some of my key projects include developing a medical platform for online consultations, an automated diagnosis system for Alzheimer’s, and various web applications using the MERN stack.
+          </p>
+        </div>
       </section>
     </>
   );

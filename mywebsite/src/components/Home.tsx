@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import About from './About';
 
 const Home = () => {
   return (
@@ -22,12 +23,7 @@ const Home = () => {
       {/* Second Section: About */}
       <section className="about full-page">
         <div className="content">
-          <h2>About Me</h2>
-          <p>
-            I’m currently working as an Application Developer and Analyst at Caterpillar in Bangalore.
-            I hold a Bachelor’s degree in Technology from VIT, Vellore. My expertise spans Machine Learning, Deep Learning,
-            and Fullstack Web Development, where I’ve contributed to impactful projects and developed scalable applications.
-          </p>
+          <About></About>
         </div>
       </section>
 

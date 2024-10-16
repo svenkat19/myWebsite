@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import About from './About';
+import Experience from './Experience';
 
 const Home = () => {
   return (
@@ -12,10 +13,10 @@ const Home = () => {
             <h1>Hey there,</h1>
             <h1>Shashank Venkat here.</h1>
           </div>
-          <img 
-            src="tTBWByQwdtDAxTvZT4ADi-transformed.png" 
-            style={{ height: '35rem', width: '26rem', marginLeft: '30rem' }} 
-            alt="Profile" 
+          <img
+            src="tTBWByQwdtDAxTvZT4ADi-transformed.png"
+            style={{ height: '35rem', width: '26rem', marginLeft: '30rem' }}
+            alt="Profile"
           />
         </div>
       </div>
@@ -26,7 +27,15 @@ const Home = () => {
           <About></About>
         </div>
       </section>
-
+      <section className="experience full-page">
+        <div className="content">
+          {/* <h2>Experience</h2>
+          <p>
+            At Caterpillar, I specialize in Python programming and intelligence-related tasks, while also working on fullstack development. Previously, I have worked on a variety of impactful projects in AI and web development.
+          </p> */}
+          <Experience></Experience>
+                  </div>
+      </section>
       {/* Third Section: Skills */}
       <section className="skills full-page">
         <div className="content">
@@ -38,14 +47,6 @@ const Home = () => {
       </section>
 
       {/* Fourth Section: Experience */}
-      <section className="experience full-page">
-        <div className="content">
-          <h2>Experience</h2>
-          <p>
-            At Caterpillar, I specialize in Python programming and intelligence-related tasks, while also working on fullstack development. Previously, I have worked on a variety of impactful projects in AI and web development.
-          </p>
-        </div>
-      </section>
 
       {/* Fifth Section: Projects */}
       <section className="projects full-page">

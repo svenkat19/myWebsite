@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import About from './About';
 import Experience from './Experience';
+import Skills from './Skills';
 
 const Home = () => {
   return (
@@ -39,10 +40,7 @@ const Home = () => {
       {/* Third Section: Skills */}
       <section className="skills full-page">
         <div className="content">
-          <h2>Skills</h2>
-          <p>
-            My skillset includes Machine Learning, Deep Learning, Fullstack Web Development, and creating intelligent, scalable solutions using technologies like Python, TensorFlow, React, Node.js, and more.
-          </p>
+          <Skills/>
         </div>
       </section>
 

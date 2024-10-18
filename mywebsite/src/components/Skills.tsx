@@ -60,80 +60,82 @@ const Skills: React.FC = () => {
     };
   }, []);
 
-  return (<>
-  <h2>Skills</h2>
-    <div
-      ref={skillsRef}
-      className={`skills-container ${isVisible ? 'fade-in' : 'fade-out'}`} // Apply fade-in or fade-out class based on visibility
-      style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-    >
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
-        {skills.slice(0, 11).map((skill, index) => (
-          <div key={skill.name} style={{ textAlign: 'center' }}>
-            <div className="skill-card" onClick={() => handleClick(index)}>
-              <div
-                style={{
-                  position: 'absolute',
-                  width: '100%',
-                  height: '100%',
-                  transformStyle: 'preserve-3d',
-                  transition: 'transform 0.6s',
-                  transform: flippedIndex === index ? 'rotateY(180deg)' : 'rotateY(0deg)',
-                  backgroundColor: 'rgba(47, 48, 48, 0.75)',
-                  borderRadius: '10px',
-                  border: '2px solid rgba(0, 0, 0, 0.5)',
-                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
-                }}
-              >
-                {/* Front Side */}
-                <div className="front">
-                  {React.cloneElement(skill.icon, {
-                    style: { transition: 'filter 0.3s ease-in-out' },
-                  })}
-                </div>
-                {/* Back Side */}
-                <div className="back">
-                  {skill.name}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
-        {skills.slice(11).map((skill, index) => (
-          <div key={skill.name} style={{ textAlign: 'center' }}>
-            <div className="skill-card" onClick={() => handleClick(index + 11)}>
-              <div
-                style={{
-                  position: 'absolute',
-                  width: '100%',
-                  height: '100%',
-                  transformStyle: 'preserve-3d',
-                  transition: 'transform 0.6s',
-                  transform: flippedIndex === index + 11 ? 'rotateY(180deg)' : 'rotateY(0deg)',
-                  backgroundColor: 'rgba(47, 48, 48, 0.75)',
-                  borderRadius: '10px',
-                  border: '2px solid rgba(0, 0, 0, 0.5)',
-                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
-                }}
-              >
-                {/* Front Side */}
-                <div className="front">
-                  {React.cloneElement(skill.icon, {
-                    style: { transition: 'filter 0.3s ease-in-out' },
-                  })}
-                </div>
-                {/* Back Side */}
-                <div className="back">
-                  {skill.name}
+  return (
+    <>
+      <h2>Skills</h2>
+      <div
+        ref={skillsRef}
+        className={`skills-container ${isVisible ? 'fade-in' : 'fade-out'}`} // Apply fade-in or fade-out class based on visibility
+        style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
+          {skills.slice(0, 11).map((skill, index) => (
+            <div key={skill.name} style={{ textAlign: 'center' }} className={isVisible ? `bounce-${(index % 4) + 1}` : ''}>
+              <div className="skill-card" onClick={() => handleClick(index)}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    transformStyle: 'preserve-3d',
+                    transition: 'transform 0.6s',
+                    transform: flippedIndex === index ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                    backgroundColor: 'rgba(47, 48, 48, 0.75)',
+                    borderRadius: '10px',
+                    border: '2px solid rgba(0, 0, 0, 0.5)',
+                    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
+                  }}
+                >
+                  {/* Front Side */}
+                  <div className="front">
+                    {React.cloneElement(skill.icon, {
+                      style: { transition: 'filter 0.3s ease-in-out' },
+                    })}
+                  </div>
+                  {/* Back Side */}
+                  <div className="back">
+                    {skill.name}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
+          {skills.slice(11).map((skill, index) => (
+            <div key={skill.name} style={{ textAlign: 'center' }} className={isVisible ? `bounce-${((index + 11) % 4) + 1}` : ''}>
+              <div className="skill-card" onClick={() => handleClick(index + 11)}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    transformStyle: 'preserve-3d',
+                    transition: 'transform 0.6s',
+                    transform: flippedIndex === index + 11 ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                    backgroundColor: 'rgba(47, 48, 48, 0.75)',
+                    borderRadius: '10px',
+                    border: '2px solid rgba(0, 0, 0, 0.5)',
+                    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
+                  }}
+                >
+                  {/* Front Side */}
+                  <div className="front">
+                    {React.cloneElement(skill.icon, {
+                      style: { transition: 'filter 0.3s ease-in-out' },
+                    })}
+                  </div>
+                  {/* Back Side */}
+                  <div className="back">
+                    {skill.name}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div></>
+    </>
   );
 };
 

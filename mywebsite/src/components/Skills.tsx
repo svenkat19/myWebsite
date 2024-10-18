@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaJava, FaHtml5, FaCss3Alt, FaReact, FaAngular, FaDocker, FaGitAlt, FaLinux } from 'react-icons/fa';
 import { SiC, SiCplusplus, SiJavascript, SiKubernetes, SiFlask, SiMongodb, SiPowerapps, SiPowerautomate, SiTypescript, SiTensorflow, SiKeras, SiMysql, SiOracle, SiDataverse } from 'react-icons/si';
+import './Skill.css'; // Import your CSS file
 
 const Skills: React.FC = () => {
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false); // Track visibility for animation
+  const skillsRef = useRef<HTMLDivElement | null>(null); // Reference to the skills container
+
   const skills = [
     { name: 'Java', icon: <FaJava color="#007396" /> },
     { name: 'C', icon: <SiC color="#A8B9CC" /> },
@@ -22,42 +27,107 @@ const Skills: React.FC = () => {
     { name: 'Oracle', icon: <SiOracle color="#F80F0F" /> },
     { name: 'PowerApps', icon: <SiPowerapps color="#742774" /> },
     { name: 'PowerAutomate', icon: <SiPowerautomate color="#0066FF" /> },
-    { name: 'Dataverse', icon: <SiDataverse color="#44C460" /> }, // Updated Dataverse color
+    { name: 'Dataverse', icon: <SiDataverse color="#44C460" /> },
     { name: 'Linux', icon: <FaLinux color="#FCC624" /> },
     { name: 'Keras', icon: <SiKeras color="#D00000" /> },
     { name: 'TensorFlow', icon: <SiTensorflow color="#FF6F00" /> }
   ];
 
+  const handleClick = (index: number) => {
+    setFlippedIndex(flippedIndex === index ? null : index);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true); // Set visibility to true when the component is in view
+        } else {
+          setIsVisible(false); // Set visibility to false when the component is out of view
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the component is in view
+    );
+
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+
+    return () => {
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+    <div
+      ref={skillsRef}
+      className={`skills-container ${isVisible ? 'fade-in' : 'fade-out'}`} // Apply fade-in or fade-out class based on visibility
+      style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+    >
       <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
-        {skills.slice(0, 11).map(skill => (
+        {skills.slice(0, 11).map((skill, index) => (
           <div key={skill.name} style={{ textAlign: 'center' }}>
-            <div style={{
-              backgroundColor: 'rgba(47, 48, 48, 0.5)', // Set box color with 50% opacity
-              padding: '20px',
-              borderRadius: '10px',
-              border: '2px solid rgba(0, 0, 0, 0.5)', // Subtle black border
-              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)', // Enhanced shadow effect
-              display: 'inline-block'
-            }}>
-              <div style={{ fontSize: '40px' }}>{skill.icon}</div>
+            <div className="skill-card" onClick={() => handleClick(index)}>
+              <div
+                style={{
+                  position: 'absolute',
+                  width: '100%',
+                  height: '100%',
+                  transformStyle: 'preserve-3d',
+                  transition: 'transform 0.6s',
+                  transform: flippedIndex === index ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                  backgroundColor: 'rgba(47, 48, 48, 0.75)',
+                  borderRadius: '10px',
+                  border: '2px solid rgba(0, 0, 0, 0.5)',
+                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
+                }}
+              >
+                {/* Front Side */}
+                <div className="front">
+                  {React.cloneElement(skill.icon, {
+                    style: { transition: 'filter 0.3s ease-in-out' },
+                  })}
+                </div>
+                {/* Back Side */}
+                <div className="back">
+                  {skill.name}
+                </div>
+              </div>
             </div>
           </div>
         ))}
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
-        {skills.slice(11).map(skill => (
+        {skills.slice(11).map((skill, index) => (
           <div key={skill.name} style={{ textAlign: 'center' }}>
-            <div style={{
-              backgroundColor: 'rgba(47, 48, 48, 0.5)', // Set box color with 50% opacity
-              padding: '20px',
-              borderRadius: '10px',
-              border: '2px solid rgba(0, 0, 0, 0.5)', // Subtle black border
-              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)', // Enhanced shadow effect
-              display: 'inline-block'
-            }}>
-              <div style={{ fontSize: '40px' }}>{skill.icon}</div>
+            <div className="skill-card" onClick={() => handleClick(index + 11)}>
+              <div
+                style={{
+                  position: 'absolute',
+                  width: '100%',
+                  height: '100%',
+                  transformStyle: 'preserve-3d',
+                  transition: 'transform 0.6s',
+                  transform: flippedIndex === index + 11 ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                  backgroundColor: 'rgba(47, 48, 48, 0.75)',
+                  borderRadius: '10px',
+                  border: '2px solid rgba(0, 0, 0, 0.5)',
+                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
+                }}
+              >
+                {/* Front Side */}
+                <div className="front">
+                  {React.cloneElement(skill.icon, {
+                    style: { transition: 'filter 0.3s ease-in-out' },
+                  })}
+                </div>
+                {/* Back Side */}
+                <div className="back">
+                  {skill.name}
+                </div>
+              </div>
             </div>
           </div>
         ))}

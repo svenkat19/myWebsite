@@ -121,7 +121,7 @@
   
   @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0); /* Original position */
+      transform: translateY(0); /* Original pos */
     }
     40% {
       transform: translateY(-2px); /* Move up slightly */

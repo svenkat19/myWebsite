@@ -43,10 +43,6 @@ const Home = () => {
           <Skills/>
         </div>
       </section>
-
-      {/* Fourth Section: Experience */}
-
-      {/* Fifth Section: Projects */}
       <section className="projects full-page">
         <div className="content">
           <h2>Projects</h2>

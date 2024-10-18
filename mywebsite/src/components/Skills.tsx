@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaJava, FaHtml5, FaCss3Alt, FaReact, FaAngular, FaDocker, FaGitAlt, FaLinux } from 'react-icons/fa';
-import { SiC, SiCplusplus, SiJavascript, SiKubernetes, SiFlask, SiMongodb, SiPowerapps, SiPowerautomate, SiTypescript, SiTensorflow, SiKeras, SiMysql, SiOracle, SiDataverse } from 'react-icons/si';
+import { SiC, SiCplusplus, SiJavascript, SiKubernetes, SiFlask, SiMongodb, SiPowerapps, SiPowerautomate, SiTypescript, SiTensorflow, SiKeras, SiMysql, SiOracle, SiDataverse, SiPython } from 'react-icons/si';
 import './Skill.css'; // Import your CSS file
 
 const Skills: React.FC = () => {
@@ -9,6 +9,7 @@ const Skills: React.FC = () => {
   const skillsRef = useRef<HTMLDivElement | null>(null); // Reference to the skills container
 
   const skills = [
+    { name: 'Python', icon: <SiPython color="#3776AB" /> },
     { name: 'Java', icon: <FaJava color="#007396" /> },
     { name: 'C', icon: <SiC color="#A8B9CC" /> },
     { name: 'C++', icon: <SiCplusplus color="#00599C" /> },
@@ -62,14 +63,14 @@ const Skills: React.FC = () => {
 
   return (
     <>
-      <h2>Skills</h2>
       <div
         ref={skillsRef}
         className={`skills-container ${isVisible ? 'fade-in' : 'fade-out'}`} // Apply fade-in or fade-out class based on visibility
         style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-      >
+        >
+        <h2>Skills</h2>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
-          {skills.slice(0, 11).map((skill, index) => (
+          {skills.slice(0, 8).map((skill, index) => (
             <div key={skill.name} style={{ textAlign: 'center' }} className={isVisible ? `bounce-${(index % 4) + 1}` : ''}>
               <div className="skill-card" onClick={() => handleClick(index)}>
                 <div
@@ -102,9 +103,9 @@ const Skills: React.FC = () => {
           ))}
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
-          {skills.slice(11).map((skill, index) => (
-            <div key={skill.name} style={{ textAlign: 'center' }} className={isVisible ? `bounce-${((index + 11) % 4) + 1}` : ''}>
-              <div className="skill-card" onClick={() => handleClick(index + 11)}>
+          {skills.slice(8, 16).map((skill, index) => (
+            <div key={skill.name} style={{ textAlign: 'center' }} className={isVisible ? `bounce-${((index + 8) % 4) + 1}` : ''}>
+              <div className="skill-card" onClick={() => handleClick(index + 8)}>
                 <div
                   style={{
                     position: 'absolute',
@@ -112,7 +113,40 @@ const Skills: React.FC = () => {
                     height: '100%',
                     transformStyle: 'preserve-3d',
                     transition: 'transform 0.6s',
-                    transform: flippedIndex === index + 11 ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                    transform: flippedIndex === index + 8 ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                    backgroundColor: 'rgba(47, 48, 48, 0.75)',
+                    borderRadius: '10px',
+                    border: '2px solid rgba(0, 0, 0, 0.5)',
+                    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
+                  }}
+                >
+                  {/* Front Side */}
+                  <div className="front">
+                    {React.cloneElement(skill.icon, {
+                      style: { transition: 'filter 0.3s ease-in-out' },
+                    })}
+                  </div>
+                  {/* Back Side */}
+                  <div className="back">
+                    {skill.name}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
+          {skills.slice(16).map((skill, index) => (
+            <div key={skill.name} style={{ textAlign: 'center' }} className={isVisible ? `bounce-${((index + 16) % 4) + 1}` : ''}>
+              <div className="skill-card" onClick={() => handleClick(index + 16)}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                    transformStyle: 'preserve-3d',
+                    transition: 'transform 0.6s',
+                    transform: flippedIndex === index + 16 ? 'rotateY(180deg)' : 'rotateY(0deg)',
                     backgroundColor: 'rgba(47, 48, 48, 0.75)',
                     borderRadius: '10px',
                     border: '2px solid rgba(0, 0, 0, 0.5)',

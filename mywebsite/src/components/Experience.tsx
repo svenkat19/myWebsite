@@ -1,7 +1,11 @@
+// Your existing imports and interface
 import React, { useState, useEffect, useRef } from 'react';
 import './Experience.css';
-// Import the image
+
+// Import the images
 import iiitLogo from '../IIIT_Bangalore_Logo.svg.png'; // Update the path as necessary
+import pharmeasyLogo from '../pharmeasy.png'; // Update the path for PharmEasy logo
+import catLogo from '../cat.png'; // Update the path for Caterpillar logo
 
 interface ExperienceItem {
   year: string;
@@ -9,29 +13,33 @@ interface ExperienceItem {
   company: string;
   description: string;
   technologies: string[];
+  logo: string; // Added logo property
 }
 
 const EXPERIENCE: ExperienceItem[] = [
   {
-    year: "2021",
+    year: "JUN 2022 - SEPT 2022",
     role: "Software Developer Internship",
     company: "PharmEasy",
     description: "Worked on full-stack development at PharmEasy.",
     technologies: ["React", "Node.js", "MongoDB"],
+    logo: iiitLogo, // Use the imported logo
   },
   {
-    year: "2023",
+    year: "DEC 2022 - JUN 2023",
     role: "ML and AI Projects",
     company: "Alzh-Net",
     description: "Built the Alzh-Net deep learning model.",
     technologies: ["TensorFlow", "Keras", "Python"],
+    logo: pharmeasyLogo, // Use the imported logo
   },
   {
-    year: "2024",
+    year: "JUL 2024",
     role: "Application Developer",
     company: "Caterpillar",
     description: "Working on backend development with Python.",
     technologies: ["Flask", "FastAPI", "Python"],
+    logo: catLogo, // Use the imported logo
   },
 ];
 
@@ -65,9 +73,8 @@ const Experience: React.FC = () => {
         {EXPERIENCE.map((exp, index) => (
           <div key={index} className={`experience-item ${isVisible ? 'fade-in' : 'fade-out'}`}>
             <div className="experience-year">
-              <img src={iiitLogo} alt="IIIT Bangalore Logo" className="experience-logo" />
-              <p>{exp.year}</p>
-              {/* Use the imported logo image */}
+              <img src={exp.logo} alt={`${exp.company} Logo`} className="experience-logo" />
+              <p className="experience-year-text">{exp.year}</p> {/* Update the class here */}
             </div>
             <div className="experience-details">
               <h2 className="experience-role">

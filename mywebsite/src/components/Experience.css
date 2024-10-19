@@ -171,9 +171,34 @@
   color: #a0a0a0;
   border-right: 1px solid #444;
   padding-right: 20px;
+  
 }
 
 .experience-year-text { /* New class for year text */
   font-size: .6rem; /* Reduce size to 5px */
   margin: 0; /* Ensure no margin */
 }
+
+/* Experience Year Styling */
+.experience-year {
+  width: 20%;
+  text-align: left;
+  font-size: 1.25rem;
+  color: #ffffff;
+  border-right: 1px solid #444;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem; /* Add gap between logo and year */
+}
+
+/* Ensure that the logo has no additional alignment issues */
+.experience-logo {
+  width: 4rem; /* Adjust size as needed */
+  height: 4rem;
+  margin-left: 0; /* No margin-left */
+  border-radius: 8px; /* Adjust this value for more or less rounding */
+  object-fit: cover;  /* Ensures the image covers the area properly */
+}
+

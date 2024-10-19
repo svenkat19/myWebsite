@@ -19,18 +19,18 @@ interface ExperienceItem {
 const EXPERIENCE: ExperienceItem[] = [
   {
     year: "JUN 2022 - SEPT 2022",
-    role: "Software Developer Internship",
-    company: "PharmEasy",
+    role: "Research Intern",
+    company: "IIIT-Bangalore",
     description: "Worked on full-stack development at PharmEasy.",
-    technologies: ["React", "Node.js", "MongoDB"],
+    technologies: ["Python", "Tensorflow", "Keras"],
     logo: iiitLogo, // Use the imported logo
   },
   {
     year: "DEC 2022 - JUN 2023",
-    role: "ML and AI Projects",
-    company: "Alzh-Net",
+    role: "Software Developer Intern",
+    company: "PharmEasy",
     description: "Built the Alzh-Net deep learning model.",
-    technologies: ["TensorFlow", "Keras", "Python"],
+    technologies: ["React", "TypeScript", "Python","Docker","Bootstrap"],
     logo: pharmeasyLogo, // Use the imported logo
   },
   {
@@ -38,7 +38,7 @@ const EXPERIENCE: ExperienceItem[] = [
     role: "Application Developer",
     company: "Caterpillar",
     description: "Working on backend development with Python.",
-    technologies: ["Flask", "FastAPI", "Python"],
+    technologies: ["Python", "PowerApps", "PowerAutomate","JavaScript","Dataverse"],
     logo: catLogo, // Use the imported logo
   },
 ];
@@ -78,7 +78,8 @@ const Experience: React.FC = () => {
             </div>
             <div className="experience-details">
               <h2 className="experience-role">
-                {exp.role} - <span className="experience-company">{exp.company}</span>
+                {exp.role} <br/>
+               <span className="experience-company">{exp.company}</span>
               </h2>
               <p className="experience-description">{exp.description}</p>
               <div className="experience-technologies">

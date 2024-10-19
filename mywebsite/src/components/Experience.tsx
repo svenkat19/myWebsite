@@ -11,9 +11,9 @@ interface ExperienceItem {
   year: string;
   role: string;
   company: string;
-  description: string;
+  description: string[]; // Change description to an array of strings
   technologies: string[];
-  logo: string; // Added logo property
+  logo: string;
 }
 
 const EXPERIENCE: ExperienceItem[] = [
@@ -21,24 +21,37 @@ const EXPERIENCE: ExperienceItem[] = [
     year: "JUN 2022 - SEPT 2022",
     role: "Research Intern",
     company: "IIIT-Bangalore",
-    description: "Worked on full-stack development at PharmEasy.",
-    technologies: ["Python", "Tensorflow", "Keras"],
+    description: [
+      'Reviewed an existing research paper titled "Classification Trees for Imbalanced Data: Surface-To-Volume Regularization"',
+      "Understood the mathematical concepts used behind SVR trees.",
+      "Performed literary review for better understanding of existing results.",
+      "Proposed a solution to extend SVR trees for Multiclass classification of balanced and imbalanced datasets."
+    ],
+    technologies: ["Python", "TensorFlow", "Keras","SkLearn"],
     logo: iiitLogo, // Use the imported logo
   },
   {
     year: "DEC 2022 - JUN 2023",
     role: "Software Developer Intern",
     company: "PharmEasy",
-    description: "Built the Alzh-Net deep learning model.",
-    technologies: ["React", "TypeScript", "Python","Docker","Bootstrap"],
+    description: [
+      "Worked on the Front End of the Surgicare website.",
+      "Implemented features like Auto Coupon Application, Graded Coupons, and PSI enhancements, fostering a 13% increase in order completion, 30% surge in average order value, and 3X organic traffic.",
+      "Worked on docker build optimization."
+    ],
+    technologies: ["React", "TypeScript", "Python", "Docker", "Bootstrap"],
     logo: pharmeasyLogo, // Use the imported logo
   },
   {
-    year: "JUL 2024",
+    year: "JUL 2024 - CURRENT",
     role: "Application Developer",
     company: "Caterpillar",
-    description: "Working on backend development with Python.",
-    technologies: ["Python", "PowerApps", "PowerAutomate","JavaScript","Dataverse"],
+    description: [
+      "Working on Power Platform Component Framework using React.",
+      "Power Apps and Power Automate Development.",
+      "Working on Python Scripting for Power Platform."
+    ],
+    technologies: ["Python", "PowerApps", "PowerAutomate", "JavaScript", "Dataverse"],
     logo: catLogo, // Use the imported logo
   },
 ];
@@ -79,9 +92,13 @@ const Experience: React.FC = () => {
             <div className="experience-details">
               <h2 className="experience-role">
                 {exp.role} <br/>
-               <span className="experience-company">{exp.company}</span>
+                <span className="experience-company">{exp.company}</span>
               </h2>
-              <p className="experience-description">{exp.description}</p>
+              <ul className="experience-description">
+                {exp.description.map((desc, idx) => (
+                  <li key={idx}>{desc}</li>  // Render each description as a list item
+                ))}
+              </ul>
               <div className="experience-technologies">
                 {exp.technologies.map((tech, idx) => (
                   <span key={idx} className="technology-badge">{tech}</span>

@@ -37,6 +37,7 @@
 .experience-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.5)); /* Blue glow effect */ 
 }
 
 /* Experience Year Styling */
@@ -69,7 +70,8 @@
 
 .experience-company {
   font-weight: normal;
-  color: #a855f7; /* Light purple accent for company */
+  font-size: medium;
+  color: #007bff; /* Light purple accent for company */
 }
 
 .experience-description {
@@ -90,12 +92,13 @@
   padding: 6px 12px;
   border-radius: 12px;
   font-size: 0.875rem;
-  color: #a855f7; /* Accent color for badges */
+  color: #007bff; /* Accent color for badges */
   transition: background-color 0.3s ease;
 }
 
 .technology-badge:hover {
-  background-color: #a855f7;
+  background-color: #007bff;
+  filter: drop-shadow(0 0 5px rgba(0, 123, 255, 1)); /* Blue glow effect */
   color: #fff;
 }
 
@@ -202,3 +205,8 @@
   object-fit: cover;  /* Ensures the image covers the area properly */
 }
 
+.experience-description {
+  list-style-type: disc;
+  margin-left: 20px; /* Indentation for bullet points */
+  color: #cccccc;
+}

@@ -60,7 +60,7 @@
   }
   
   .skill-card:hover .front svg {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)); /* Default white glow */
+    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.7)) drop-shadow(0 0 20px rgba(0, 123, 255, 0.7)); /* Default white glow */
   }
   
   /* Example to make specific colors glow */

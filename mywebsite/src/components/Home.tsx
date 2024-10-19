@@ -3,6 +3,7 @@ import './Home.css';
 import About from './About';
 import Experience from './Experience';
 import Skills from './Skills';
+import Project from './Project';
 
 const Home = () => {
   return (
@@ -30,25 +31,17 @@ const Home = () => {
       </section>
       <section className="experience full-page">
         <div className="content">
-          {/* <h2>Experience</h2>
-          <p>
-            At Caterpillar, I specialize in Python programming and intelligence-related tasks, while also working on fullstack development. Previously, I have worked on a variety of impactful projects in AI and web development.
-          </p> */}
-          <Experience></Experience>
-                  </div>
+          <Experience />
+        </div>
       </section>
-      {/* Third Section: Skills */}
       <section className="skills full-page">
         <div className="content">
-          <Skills/>
+          <Skills />
         </div>
       </section>
       <section className="projects full-page">
         <div className="content">
-          <h2>Projects</h2>
-          <p>
-            Some of my key projects include developing a medical platform for online consultations, an automated diagnosis system for Alzheimer’s, and various web applications using the MERN stack.
-          </p>
+          <Project />
         </div>
       </section>
     </>

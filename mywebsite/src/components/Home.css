@@ -37,7 +37,7 @@ img {
 }
 
 /* About, Skills, Experience, and Projects sections */
-.about, .skills, .experience, .projects {
+.about, .skills, .experience, .projects, .certifications {
   /* Keeping your existing background and section styling */
   background-color: black;
   color: white;
@@ -46,7 +46,7 @@ img {
   background-repeat: repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
 }
 

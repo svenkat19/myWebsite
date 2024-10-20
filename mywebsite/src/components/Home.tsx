@@ -4,6 +4,7 @@ import About from './About';
 import Experience from './Experience';
 import Skills from './Skills';
 import Project from './Project';
+import Certifications from './Certifications';
 
 const Home = () => {
   return (
@@ -42,6 +43,11 @@ const Home = () => {
       <section className="projects full-page">
         <div className="content">
           <Project />
+        </div>
+      </section>
+      <section className="certifications full-page">
+        <div className="content">
+          <Certifications/>
         </div>
       </section>
     </>

@@ -1,39 +1,35 @@
 // Your existing imports and interface
 import React, { useState, useEffect, useRef } from 'react';
-import './Experience.css';
+import './Project.css';
 
 // Import the images
-import iiitLogo from '../IIIT_Bangalore_Logo.svg.png'; // Update the path as necessary
+import alzhnet from '../Alzhnet.png'; // Update the path as necessary
 import pharmeasyLogo from '../pharmeasy.png'; // Update the path for PharmEasy logo
 import catLogo from '../cat.png'; // Update the path for Caterpillar logo
 
-interface ExperienceItem {
+interface ProjectItem {
   year: string;
   role: string;
-  company: string;
   description: string[]; // Change description to an array of strings
   technologies: string[];
   logo: string;
 }
 
-const EXPERIENCE: ExperienceItem[] = [
+const PROJECTS: ProjectItem[] = [
   {
-    year: "JUN 2022 - SEPT 2022",
-    role: "Research Intern",
-    company: "IIIT-Bangalore",
+    year: "JUL 2024",
+    role: "MRI-based Automated Diagnosis of Alzheimer’s Disease using Alzh-Net Deep Learning Model",
     description: [
-      'Reviewed an existing research paper titled "Classification Trees for Imbalanced Data: Surface-To-Volume Regularization"',
-      "Understood the mathematical concepts used behind SVR trees.",
-      "Performed literary review for better understanding of existing results.",
-      "Proposed a solution to extend SVR trees for Multiclass classification of balanced and imbalanced datasets."
+      'Developed a CNN-based model, Alzh-Net, to aid in diagnosing and segmenting Alzheimer’s disease symptoms through image analysis.',
+      "Designed and implemented a dual CNN architecture, Alzh-Net Upper and Lower, for multi-scale feature extraction.",
+      "Captured global patterns and broad perspectives in input images by employing convolutional layers with varied strides and max-pooling layers.",
     ],
-    technologies: ["Python", "TensorFlow", "Keras","SkLearn"],
-    logo: iiitLogo, // Use the imported logo
+    technologies: ["Python", "TensorFlow", "Keras","SkLearn",'Pandas','Numpy'],
+    logo: alzhnet, // Use the imported logo
   },
   {
     year: "DEC 2022 - JUN 2023",
     role: "Software Developer Intern",
-    company: "PharmEasy",
     description: [
       "Worked on the Front End of the Surgicare website.",
       "Implemented features like Auto Coupon Application, Graded Coupons, and PSI enhancements, fostering a 13% increase in order completion, 30% surge in average order value, and 3X organic traffic.",
@@ -45,7 +41,6 @@ const EXPERIENCE: ExperienceItem[] = [
   {
     year: "JUL 2024 - CURRENT",
     role: "Application Developer",
-    company: "Caterpillar",
     description: [
       "Working on Power Platform Component Framework using React.",
       "Power Apps and Power Automate Development.",
@@ -58,7 +53,7 @@ const EXPERIENCE: ExperienceItem[] = [
 
 const Project: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const experienceRef = useRef<HTMLDivElement | null>(null);
+  const projectRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -68,39 +63,38 @@ const Project: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    if (experienceRef.current) {
-      observer.observe(experienceRef.current);
+    if (projectRef.current) {
+      observer.observe(projectRef.current);
     }
 
     return () => {
-      if (experienceRef.current) {
-        observer.unobserve(experienceRef.current);
+      if (projectRef.current) {
+        observer.unobserve(projectRef.current);
       }
     };
   }, []);
 
   return (
-    <section className="experience-section" ref={experienceRef}>
-      <h2 className={`experience-heading ${isVisible ? 'fade-in' : 'fade-out'}`}>Experience</h2>
-      <div className={`experience-list ${isVisible ? 'fade-in' : 'fade-out'}`}>
-        {EXPERIENCE.map((exp, index) => (
-          <div key={index} className={`experience-item ${isVisible ? 'fade-in' : 'fade-out'}`}>
-            <div className="experience-year">
-              <img src={exp.logo} alt={`${exp.company} Logo`} className="experience-logo" />
-              <p className="experience-year-text">{exp.year}</p> {/* Update the class here */}
+    <section className="project-section" ref={projectRef}>
+      <h2 className={`project-heading ${isVisible ? 'fade-in' : 'fade-out'}`}>Projects</h2>
+      <div className={`project-list ${isVisible ? 'fade-in' : 'fade-out'}`}>
+        {PROJECTS.map((proj, index) => (
+          <div key={index} className={`project-item ${isVisible ? 'fade-in' : 'fade-out'}`}>
+            <div className="project-year">
+              <img src={proj.logo} alt={`${proj.logo} Logo`} className="project-logo" />
+              <p className="project-year-text">{proj.year}</p> {/* Update the class here */}
             </div>
-            <div className="experience-details">
-              <h2 className="experience-role">
-                {exp.role} <br/>
-                <span className="experience-company">{exp.company}</span>
+            <div className="project-details">
+              <h2 className="project-role">
+                {proj.role} <br/>
               </h2>
-              <ul className="experience-description">
-                {exp.description.map((desc, idx) => (
+              <ul className="project-description">
+                {proj.description.map((desc, idx) => (
                   <li key={idx}>{desc}</li>  // Render each description as a list item
                 ))}
               </ul>
-              <div className="experience-technologies">
-                {exp.technologies.map((tech, idx) => (
+              <div className="project-technologies">
+                {proj.technologies.map((tech, idx) => (
                   <span key={idx} className="technology-badge">{tech}</span>
                 ))}
               </div>

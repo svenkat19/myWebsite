@@ -4,9 +4,9 @@ import './Project.css';
 
 // Import the images
 import alzhnet from '../Alzhnet.png'; // Update the path as necessary
-import pharmeasyLogo from '../pharmeasy.png'; // Update the path for PharmEasy logo
-import catLogo from '../cat.png'; // Update the path for Caterpillar logo
-
+import DDL from '../DDL.png'; // Update the path for PharmEasy logo
+import mednet from '../mednet.png'; // Update the path for Caterpillar logo
+import svr from '../svr.jpg';
 interface ProjectItem {
   year: string;
   role: string;
@@ -28,26 +28,34 @@ const PROJECTS: ProjectItem[] = [
     logo: alzhnet, // Use the imported logo
   },
   {
-    year: "DEC 2022 - JUN 2023",
-    role: "Software Developer Intern",
+    year: "DEC 2022",
+    role: "Data-Efficient Deep Learning Framework for Detecting Cloudy Vision in Human Eye",
     description: [
-      "Worked on the Front End of the Surgicare website.",
-      "Implemented features like Auto Coupon Application, Graded Coupons, and PSI enhancements, fostering a 13% increase in order completion, 30% surge in average order value, and 3X organic traffic.",
-      "Worked on docker build optimization."
+      "Understanding existing models for cataract detection.",
+      "Developed a model to improve diagnosis of cataract with higher accuracy with a dataset of over 10000 images",
     ],
-    technologies: ["React", "TypeScript", "Python", "Docker", "Bootstrap"],
-    logo: pharmeasyLogo, // Use the imported logo
+    technologies: ["Python", "Sklearn", "Tensorflow", "OpenCV", "Pandas","NumPy"],
+    logo: DDL, // Use the imported logo
   },
   {
-    year: "JUL 2024 - CURRENT",
-    role: "Application Developer",
+    year: "DEC 2022",
+    role: "Classification of Imbalanced Multivariate Data Using Surface to Volume Multiclass Classifier Tree",
     description: [
-      "Working on Power Platform Component Framework using React.",
-      "Power Apps and Power Automate Development.",
-      "Working on Python Scripting for Power Platform."
+      "Extended SVR tress for multiclass datasets.",
+      "Proposed a solution to extend SVR trees for Multiclass classification of balanced and imbalanced datasets."
     ],
-    technologies: ["Python", "PowerApps", "PowerAutomate", "JavaScript", "Dataverse"],
-    logo: catLogo, // Use the imported logo
+    technologies: ["Python", "Sklearn", "Pandas", "Numpy"],
+    logo: svr, // Use the imported logo
+  },
+  {
+    year: "NOV 2022",
+    role: "MedNet Medical Platform",
+    description: [
+      "Developed a web platform for the health system providing online video call consultations with doctors.",
+      "Implemented real-time hospital search based on location and bed availability and promoted digital record keeping to reduce paper usage."
+    ],
+    technologies: ["EJS", "NodeJS", "ExpressJS", "MongoDB", "MySQL","PeerJS"],
+    logo: mednet, // Use the imported logo
   },
 ];
 

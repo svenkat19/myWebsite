@@ -5,7 +5,7 @@ import Experience from './Experience';
 import Skills from './Skills';
 import Project from './Project';
 import Certifications from './Certifications';
-
+import cv from '../cv.png';
 const Home = () => {
   return (
     <>
@@ -15,6 +15,9 @@ const Home = () => {
           <div>
             <h1>Hey there,</h1>
             <h1>Shashank Venkat here.</h1>
+            <a href='' target='_blank' rel='noopener noreferrer'>
+              <img src={cv} style={{width:'4rem',height:'4rem'}}></img>
+            </a>
           </div>
           <img
             src="tTBWByQwdtDAxTvZT4ADi-transformed.png"

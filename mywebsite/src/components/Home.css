@@ -49,6 +49,31 @@ img {
   height: 110vh;
   width: 100vw;
 }
+ .projects {
+  /* Keeping your existing background and section styling */
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  background-image: url('/public/dark-gradient-background-with-copy-space/rm218-bb-07.jpg');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  height: 130vh;
+  width: 100vw;
+}
+
+.certifications {
+  /* Keeping your existing background and section styling */
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  background-image: url('/public/dark-gradient-background-with-copy-space/rm218-bb-07.jpg');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  height: 140vh;
+  width: 100vw;
+}
 
 h2 {
   font-size: 2.5rem;

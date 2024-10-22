@@ -1,9 +1,8 @@
 import React from 'react'
-
+import "./Certification.css"
 const Certifications = () => {
   return (
-    <div>
-      f lmf ;f
+    <div className="project-section">
     </div>
   )
 }

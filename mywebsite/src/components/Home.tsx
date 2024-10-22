@@ -1,33 +1,25 @@
 import React from 'react';
+import { Typewriter } from 'react-simple-typewriter';
 import './Home.css';
 import About from './About';
 import Experience from './Experience';
 import Skills from './Skills';
 import Project from './Project';
 import Certifications from './Certifications';
+import cv from '../cv.png';
+import Typeright from './Typeright';
 
 const Home = () => {
   return (
     <>
       {/* First Section: Introduction */}
-      <div className="satisfy-regular">
-        <div className="container flex-container" style={{ marginTop: '1rem' }}>
-          <div>
-            <h1>Hey there,</h1>
-            <h1>Shashank Venkat here.</h1>
-          </div>
-          <img
-            src="tTBWByQwdtDAxTvZT4ADi-transformed.png"
-            style={{ height: '35rem', width: '26rem', marginLeft: '30rem' }}
-            alt="Profile"
-          />
-        </div>
+      <div id="home-section" className="satisfy-regular full-page">
+        <Typeright />
       </div>
-
       {/* Second Section: About */}
       <section className="about full-page">
         <div className="content">
-          <About></About>
+          <About />
         </div>
       </section>
       <section className="experience full-page">
@@ -47,7 +39,7 @@ const Home = () => {
       </section>
       <section className="certifications full-page">
         <div className="content">
-          <Certifications/>
+          <Certifications />
         </div>
       </section>
     </>

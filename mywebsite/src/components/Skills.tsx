@@ -63,6 +63,7 @@ const Skills: React.FC = () => {
 
   return (
     <>
+    <br/>
       <div
         ref={skillsRef}
         className={`skills-container ${isVisible ? 'fade-in' : 'fade-out'}`} // Apply fade-in or fade-out class based on visibility

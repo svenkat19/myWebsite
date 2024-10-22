@@ -1,64 +1,73 @@
-// Your existing imports and interface
 import React, { useState, useEffect, useRef } from 'react';
-import './Experience.css';
+import './Project.css';
 
 // Import the images
-import iiitLogo from '../IIIT_Bangalore_Logo.svg.png'; // Update the path as necessary
-import pharmeasyLogo from '../pharmeasy.png'; // Update the path for PharmEasy logo
-import catLogo from '../cat.png'; // Update the path for Caterpillar logo
-
-interface ExperienceItem {
+import alzhnet from '../Alzhnet.png'; // Update the path as necessary
+import DDL from '../DDL.png'; // Update the path for PharmEasy logo
+import mednet from '../mednet.png'; // Update the path for Caterpillar logo
+import svr from '../svr.jpg';
+import github from '../github.png';
+import research from '../research.png'
+interface ProjectItem {
   year: string;
   role: string;
-  company: string;
   description: string[]; // Change description to an array of strings
   technologies: string[];
   logo: string;
+  ref: string;
 }
 
-const EXPERIENCE: ExperienceItem[] = [
+const PROJECTS: ProjectItem[] = [
   {
-    year: "JUN 2022 - SEPT 2022",
-    role: "Research Intern",
-    company: "IIIT-Bangalore",
+    year: "JUL 2024",
+    role: "MRI-based Automated Diagnosis of Alzheimer’s Disease using Alzh-Net Deep Learning Model",
     description: [
-      'Reviewed an existing research paper titled "Classification Trees for Imbalanced Data: Surface-To-Volume Regularization"',
-      "Understood the mathematical concepts used behind SVR trees.",
-      "Performed literary review for better understanding of existing results.",
+      'Developed a CNN-based model, Alzh-Net, to aid in diagnosing and segmenting Alzheimer’s disease symptoms through image analysis.',
+      "Designed and implemented a dual CNN architecture, Alzh-Net Upper and Lower, for multi-scale feature extraction.",
+      "Captured global patterns and broad perspectives in input images by employing convolutional layers with varied strides and max-pooling layers.",
+    ],
+    technologies: ["Python", "TensorFlow", "Keras", "SkLearn", 'Pandas', 'Numpy'],
+    logo: alzhnet, // Use the imported logo,
+    ref: "https://github.com/svenkat19/Alzh-Net"
+  },
+  {
+    year: "DEC 2022",
+    role: "Data-Efficient Deep Learning Framework for Detecting Cloudy Vision in Human Eye",
+    description: [
+      "Understanding existing models for cataract detection.",
+      "Developed a model to improve diagnosis of cataract with higher accuracy with a dataset of over 10000 images",
+    ],
+    technologies: ["Python", "Sklearn", "Tensorflow", "OpenCV", "Pandas", "NumPy"],
+    logo: DDL, // Use the imported logo
+    ref: "https://github.com/svenkat19/Data-Efficient-Deep-Learning-Framework-for-Detecting-Cloudy-Vision-in-Human-Eye"
+  },
+  {
+    year: "DEC 2022",
+    role: "Classification of Imbalanced Multivariate Data Using Surface to Volume Multiclass Classifier Tree",
+    description: [
+      "Extended SVR trees for multiclass datasets.",
       "Proposed a solution to extend SVR trees for Multiclass classification of balanced and imbalanced datasets."
     ],
-    technologies: ["Python", "TensorFlow", "Keras","SkLearn"],
-    logo: iiitLogo, // Use the imported logo
+    technologies: ["Python", "Sklearn", "Pandas", "Numpy"],
+    logo: svr, // Use the imported logo
+    ref: "https://www.doi.org/10.56726/IRJMETS32590"
   },
   {
-    year: "DEC 2022 - JUN 2023",
-    role: "Software Developer Intern",
-    company: "PharmEasy",
+    year: "NOV 2022",
+    role: "MedNet Medical Platform",
     description: [
-      "Worked on the Front End of the Surgicare website.",
-      "Implemented features like Auto Coupon Application, Graded Coupons, and PSI enhancements, fostering a 13% increase in order completion, 30% surge in average order value, and 3X organic traffic.",
-      "Worked on docker build optimization."
+      "Developed a web platform for the health system providing online video call consultations with doctors.",
+      "Implemented real-time hospital search based on location and bed availability and promoted digital record keeping to reduce paper usage."
     ],
-    technologies: ["React", "TypeScript", "Python", "Docker", "Bootstrap"],
-    logo: pharmeasyLogo, // Use the imported logo
-  },
-  {
-    year: "JUL 2024 - CURRENT",
-    role: "Application Developer",
-    company: "Caterpillar",
-    description: [
-      "Working on Power Platform Component Framework using React.",
-      "Power Apps and Power Automate Development.",
-      "Working on Python Scripting for Power Platform."
-    ],
-    technologies: ["Python", "PowerApps", "PowerAutomate", "JavaScript", "Dataverse"],
-    logo: catLogo, // Use the imported logo
+    technologies: ["EJS", "NodeJS", "ExpressJS", "MongoDB", "MySQL", "PeerJS"],
+    logo: mednet, // Use the imported logo
+    ref: "https://github.com/svenkat19/MedNet"
   },
 ];
 
 const Project: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const experienceRef = useRef<HTMLDivElement | null>(null);
+  const projectRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -68,41 +77,44 @@ const Project: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    if (experienceRef.current) {
-      observer.observe(experienceRef.current);
+    if (projectRef.current) {
+      observer.observe(projectRef.current);
     }
 
     return () => {
-      if (experienceRef.current) {
-        observer.unobserve(experienceRef.current);
+      if (projectRef.current) {
+        observer.unobserve(projectRef.current);
       }
     };
   }, []);
 
   return (
-    <section className="experience-section" ref={experienceRef}>
-      <h2 className={`experience-heading ${isVisible ? 'fade-in' : 'fade-out'}`}>Experience</h2>
-      <div className={`experience-list ${isVisible ? 'fade-in' : 'fade-out'}`}>
-        {EXPERIENCE.map((exp, index) => (
-          <div key={index} className={`experience-item ${isVisible ? 'fade-in' : 'fade-out'}`}>
-            <div className="experience-year">
-              <img src={exp.logo} alt={`${exp.company} Logo`} className="experience-logo" />
-              <p className="experience-year-text">{exp.year}</p> {/* Update the class here */}
+    <section className="project-section" ref={projectRef}>
+      <h2 className={`project-heading ${isVisible ? 'fade-in' : 'fade-out'}`}>Projects</h2>
+      <div className={`project-list ${isVisible ? 'fade-in' : 'fade-out'}`}>
+        {PROJECTS.map((proj, index) => (
+          <div key={index} className={`project-item ${isVisible ? 'fade-in' : 'fade-out'}`}>
+            <div className="project-year">
+              <img src={proj.logo} alt={`${proj.logo} Logo`} className="project-logo" />
             </div>
-            <div className="experience-details">
-              <h2 className="experience-role">
-                {exp.role} <br/>
-                <span className="experience-company">{exp.company}</span>
+            <div className="project-details">
+              <h2 className="project-role">
+                {proj.role} <br />
               </h2>
-              <ul className="experience-description">
-                {exp.description.map((desc, idx) => (
+              <ul className="project-description">
+                {proj.description.map((desc, idx) => (
                   <li key={idx}>{desc}</li>  // Render each description as a list item
                 ))}
               </ul>
-              <div className="experience-technologies">
-                {exp.technologies.map((tech, idx) => (
+              <div className="project-technologies">
+                {proj.technologies.map((tech, idx) => (
                   <span key={idx} className="technology-badge">{tech}</span>
                 ))}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', marginTop: '1rem' }}>
+                <a href={proj.ref} style={{ display: 'flex', alignItems: 'center' }}>
+                  <img className="ref-link" src={proj.logo===svr?research:github} alt="GitHub" style={{ width: '3rem', height: '3rem', marginLeft: '0rem' }} />
+                </a>
               </div>
             </div>
           </div>

@@ -210,3 +210,74 @@
   margin-left: 20px; /* Indentation for bullet points */
   color: #cccccc;
 }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-year {
+    width: 100%;
+    border-right: none;
+    padding-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .experience-details {
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+/* Fade Animations */
+.fade-in-heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 1s ease;
+}
+
+.fade-out-heading {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.25s ease;
+}
+
+.fade-in-list {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 1s ease;
+}
+
+.fade-out-list {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.25s ease;
+}
+
+.fade-in-item {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.5s ease, transform 1s ease;
+}
+
+.fade-out-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.25s ease;
+}
+.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.slide-out {
+  transform: translateX(20px); /* Change from -20px to 20px for right movement */
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}

@@ -102,7 +102,14 @@
     filter: drop-shadow(0 0 5px rgba(0, 123, 255, 1)); /* Blue glow effect */
     color: #fff;
   }
-  
+  .ref-link {
+    transition: transform 0.3s ease; /* Add a transition for smooth scaling */
+  }
+  .ref-link:hover{
+    filter: drop-shadow(0 0 5px rgb(188, 212, 237)); 
+    transform: scale(1.2); 
+
+  }
   /* Responsive Design */
   @media (max-width: 768px) {
     .project-item {

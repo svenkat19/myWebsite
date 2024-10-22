@@ -8,15 +8,8 @@ import Resume from './components/Resume';
 function App(): React.ReactElement {
   return (
     <div className='main'>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          {/* <Route path="/projects" element={<Project />} /> */}
-          <Route path="/resume" element={<Resume />} />
-        </Routes>
-      </BrowserRouter>
+      <Navbar/>
+      <Home/>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-// Your existing imports and interface
 import React, { useState, useEffect, useRef } from 'react';
 import './Experience.css';
 
@@ -27,8 +26,8 @@ const EXPERIENCE: ExperienceItem[] = [
       "Performed literary review for better understanding of existing results.",
       "Proposed a solution to extend SVR trees for Multiclass classification of balanced and imbalanced datasets."
     ],
-    technologies: ["Python", "TensorFlow", "Keras","SkLearn"],
-    logo: iiitLogo, // Use the imported logo
+    technologies: ["Python", "TensorFlow", "Keras", "SkLearn"],
+    logo: iiitLogo,
   },
   {
     year: "DEC 2022 - JUN 2023",
@@ -37,10 +36,10 @@ const EXPERIENCE: ExperienceItem[] = [
     description: [
       "Worked on the Front End of the Surgicare website.",
       "Implemented features like Auto Coupon Application, Graded Coupons, and PSI enhancements, fostering a 13% increase in order completion, 30% surge in average order value, and 3X organic traffic.",
-      "Worked on docker build optimization."
+      "Worked on Docker build optimization."
     ],
     technologies: ["React", "TypeScript", "Python", "Docker", "Bootstrap"],
-    logo: pharmeasyLogo, // Use the imported logo
+    logo: pharmeasyLogo,
   },
   {
     year: "JUL 2024 - CURRENT",
@@ -52,7 +51,7 @@ const EXPERIENCE: ExperienceItem[] = [
       "Working on Python Scripting for Power Platform."
     ],
     technologies: ["Python", "PowerApps", "PowerAutomate", "JavaScript", "Dataverse"],
-    logo: catLogo, // Use the imported logo
+    logo: catLogo,
   },
 ];
 
@@ -81,22 +80,23 @@ const Experience: React.FC = () => {
 
   return (
     <section className="experience-section" ref={experienceRef}>
-      <h2 className={`experience-heading ${isVisible ? 'fade-in' : 'fade-out'}`}>Experience</h2>
-      <div className={`experience-list ${isVisible ? 'fade-in' : 'fade-out'}`}>
+      <br /><br />
+      <h2 className={isVisible ? 'slide-in' : 'slide-out'}>Experience</h2>
+      <div className={`experience-list ${isVisible ? 'fade-in-list' : 'fade-out-list'}`}>
         {EXPERIENCE.map((exp, index) => (
-          <div key={index} className={`experience-item ${isVisible ? 'fade-in' : 'fade-out'}`}>
+          <div key={index} className={`experience-item ${isVisible ? 'fade-in-item' : 'fade-out-item'}`}>
             <div className="experience-year">
               <img src={exp.logo} alt={`${exp.company} Logo`} className="experience-logo" />
-              <p className="experience-year-text">{exp.year}</p> {/* Update the class here */}
+              <p className="experience-year-text">{exp.year}</p>
             </div>
             <div className="experience-details">
               <h2 className="experience-role">
-                {exp.role} <br/>
+                {exp.role} <br />
                 <span className="experience-company">{exp.company}</span>
               </h2>
               <ul className="experience-description">
                 {exp.description.map((desc, idx) => (
-                  <li key={idx}>{desc}</li>  // Render each description as a list item
+                  <li key={idx}>{desc}</li>
                 ))}
               </ul>
               <div className="experience-technologies">

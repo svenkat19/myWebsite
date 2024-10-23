@@ -66,16 +66,24 @@ const Typeright = () => {
                         />
                     </span>
                 </h2>
-                <br/>
-                <div>
-                    <button type="button" className="btn btn-outline-primary">
-                        <div className="download-link">
-                            <a href='https://drive.google.com/file/d/1XhililbwsefiTokfYpvcGbJnVE2Xvu2s/view?usp=sharing' style={{ display: 'flex', alignItems: 'center' }}>
-                                <span style={{fontFamily:'Arial',fontWeight:'bold'}}>View Resume </span>
-                                <img className='download-image' src={cv} style={{ width: '2rem', height: '2rem', marginLeft: '0.5rem' }} alt="Resume" />
-                            </a>
+                <br />
+                <div className="container flex-container" style={{ marginTop: '1rem' }} ref={typerightRef}>
+                    <div className="text-container" style={{ width: '30rem' }}>
+                        {/* ...existing code... */}
+                        <div>
+                            <button
+                                type="button"
+                                className={`btn btn-outline-primary ${isVisible ? 'fade-in-left' : 'fade-out-left'}`}
+                            >
+                                <div className="download-link">
+                                    <a href='https://drive.google.com/file/d/1XhililbwsefiTokfYpvcGbJnVE2Xvu2s/view?usp=sharing' style={{ display: 'flex', alignItems: 'center' }}>
+                                        <span style={{ fontFamily: 'Arial', fontWeight: 'bold' }}>View Resume </span>
+                                        <img className='download-image' src={cv} style={{ width: '2rem', height: '2rem', marginLeft: '0.5rem' }} alt="Resume" />
+                                    </a>
+                                </div>
+                            </button>
                         </div>
-                    </button>
+                    </div>
                 </div>
             </div>
 

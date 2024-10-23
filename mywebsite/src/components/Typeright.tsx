@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import './Typeright.css'; // Make sure to import your CSS
+import cv from '../cv.png';
 
 const Typeright = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -28,13 +29,13 @@ const Typeright = () => {
     return (
         <div className="container flex-container" style={{ marginTop: '1rem' }} ref={typerightRef}>
             <div className="text-container" style={{ width: '30rem' }}>
-                <h1 
+                <h1
                     className={isVisible ? 'fade-in-left' : 'fade-out-left'}
                     style={{ fontSize: '3rem' }}
                 >
                     Hey there,
                 </h1>
-                <h1 
+                <h1
                     className={isVisible ? 'fade-in-left' : 'fade-out-left'}
                     style={{ fontSize: '3rem' }}
                 >
@@ -42,8 +43,8 @@ const Typeright = () => {
                 </h1>
                 <br />
                 <h2>
-                    <span 
-                        className={isVisible ? 'fade-in-left' : 'fade-out-left'} 
+                    <span
+                        className={isVisible ? 'fade-in-left' : 'fade-out-left'}
                         style={{ color: '#007ACC', fontWeight: 'bold', fontSize: '2rem' }}
                     >
                         <Typewriter
@@ -65,8 +66,20 @@ const Typeright = () => {
                         />
                     </span>
                 </h2>
+                <br/>
+                <div>
+                    <button type="button" className="btn btn-outline-primary">
+                        <div className="download-link">
+                            <a href='https://drive.google.com/file/d/1XhililbwsefiTokfYpvcGbJnVE2Xvu2s/view?usp=sharing' style={{ display: 'flex', alignItems: 'center' }}>
+                                <span style={{fontFamily:'Arial',fontWeight:'bold'}}>View Resume </span>
+                                <img className='download-image' src={cv} style={{ width: '2rem', height: '2rem', marginLeft: '0.5rem' }} alt="Resume" />
+                            </a>
+                        </div>
+                    </button>
+                </div>
             </div>
-            <div 
+
+            <div
                 className={`profile-container ${isVisible ? 'fade-in-right' : 'fade-out-right'}`}
                 style={{}}
             >

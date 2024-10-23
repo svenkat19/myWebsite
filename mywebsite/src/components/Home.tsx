@@ -6,7 +6,6 @@ import Experience from './Experience';
 import Skills from './Skills';
 import Project from './Project';
 import Certifications from './Certifications';
-import cv from '../cv.png';
 import Typeright from './Typeright';
 
 const Home = () => {

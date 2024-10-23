@@ -1,29 +1,81 @@
+/* Bouncing and glowing button */
+.btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for shadow and scaling */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover effect: bounce and glow */
+.btn:hover {
+    transform: translateY(-5px) scale(1.1); /* Button bounce and scale */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 3); /* Glowing shadow effect */
+}
+
+/* Logo enlargement effect */
+.download-image {
+    transition: transform 0.3s ease; /* Smooth transition for logo scaling */
+}
+
+/* Logo scales up slightly on hover */
+.btn:hover .download-image {
+    transform: scale(1.2); /* Increase size of the image on hover */
+}
+
+/* Ensuring the text inherits style and looks natural */
+.download-link a {
+    color: inherit; /* Inherit color from the button */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+/* Hover effect on text */
+.btn:hover .download-link a {
+    color: black; /* Change text color to black on hover */
+    font-weight: bold;
+}
+
+/* Fade-in-left animation */
 .fade-in-left {
     opacity: 1;
-    transform: translateX(0);
-    transition: opacity 1s ease, transform 2s ease; /* Slower transition */
+    transform: translateX(0); /* Reset translation */
+    transition: opacity 1s ease, transform 2s ease; /* Slower transition for smoother effect */
 }
 
+/* Fade-out-left animation */
 .fade-out-left {
     opacity: 0;
-    transform: translateX(-20px);
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Adjusted timing */
+    transform: translateX(-20px); /* Slight shift left */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Faster fade-out */
 }
 
+/* Fade-in-right animation */
 .fade-in-right {
     opacity: 1;
-    transform: translateX(0);
-    transition: opacity 1s ease, transform 2s ease; /* Slower transition */
+    transform: translateX(0); /* Reset translation */
+    transition: opacity 1s ease, transform 2s ease; /* Slower transition for smoother effect */
 }
 
+/* Fade-out-right animation */
 .fade-out-right {
     opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Adjusted timing */
+    transform: translateX(20px); /* Slight shift right */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Faster fade-out */
 }
 
+/* Container styling */
 .container {
     margin: 0; /* Remove margin */
     padding: 0; /* Remove padding */
 }
 
+/* Style for the link containing the resume */
+.download-link a {
+    color: inherit; /* Inherit color from the button */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+/* Hover effect for the download link */
+.btn:hover .download-link a {
+    color: black; /* Change text color to black on hover */
+    font-weight: bold; /* Make the text bold on hover */
+}

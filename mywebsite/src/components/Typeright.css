@@ -38,7 +38,7 @@
 .fade-in-left {
     opacity: 1;
     transform: translateX(0); /* Reset translation */
-    transition: opacity 1s ease, transform 2s ease; /* Slower transition for smoother effect */
+    transition: opacity 1s ease, transform 1s ease; /* Slower transition for smoother effect */
 }
 
 /* Fade-out-left animation */
@@ -52,7 +52,7 @@
 .fade-in-right {
     opacity: 1;
     transform: translateX(0); /* Reset translation */
-    transition: opacity 1s ease, transform 2s ease; /* Slower transition for smoother effect */
+    transition: opacity 1s ease, transform 1s ease; /* Slower transition for smoother effect */
 }
 
 /* Fade-out-right animation */

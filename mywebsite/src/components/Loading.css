@@ -1,0 +1,22 @@
+/* src/components/Loading.css */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: dark background */
+    z-index: 9999; /* Ensure it's on top */
+    margin-right: 4rem;
+}
+
+.loading-screen img {
+    max-width: none;  /* Prevents the image from scaling down */
+    max-height: none; /* Prevents the image from scaling down */
+    width: auto;      /* Maintain original width */
+    height: auto;     /* Maintain original height */
+    margin-right: 15rem;
+}

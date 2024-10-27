@@ -60,12 +60,17 @@ img {
   height: 100vh;
 }
 .home-section {
-  height: 20vh;
+  height: 10vh;
 }
 .certifications {
   height: 140vh;
 }
-
+.skills{
+  height: 120vh;
+}
+.experience{
+  height: 140vh;
+}
 /* Content general styling */
 .content {
   max-width: 1000px;

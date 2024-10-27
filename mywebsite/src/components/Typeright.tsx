@@ -76,7 +76,7 @@ const Typeright = () => {
                                 className={`btn btn-outline-primary ${isVisible ? 'fade-in-left' : 'fade-out-left'}`}
                             >
                                 <div className="download-link">
-                                    <a href='https://drive.google.com/file/d/1XhililbwsefiTokfYpvcGbJnVE2Xvu2s/view?usp=sharing' style={{ display: 'flex', alignItems: 'center' }}>
+                                    <a href='https://drive.google.com/file/d/1LTnvqorg_MBdTJKMcK-lH50VH6mMFxSF/view?usp=sharing' style={{ display: 'flex', alignItems: 'center' }}>
                                         <span style={{ fontFamily: 'Arial', fontWeight: 'bold' }}>View Resume </span>
                                         <img className='download-image' src={cv} style={{ width: '2rem', height: '2rem', marginLeft: '0.5rem' }} alt="Resume" />
                                     </a>

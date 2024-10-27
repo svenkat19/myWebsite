@@ -36,9 +36,11 @@ const EXPERIENCE: ExperienceItem[] = [
     description: [
       "Worked on the Front End of the Surgicare website.",
       "Implemented features like Auto Coupon Application, Graded Coupons, and PSI enhancements, fostering a 13% increase in order completion, 30% surge in average order value, and 3X organic traffic.",
-      "Worked on Docker build optimization."
+      "Worked on Docker build optimization.",
+      "Worked on Arango DB and consistency of stored data.",
+      "Developed Slack bots in Python to automate data consistency monitoring and alert relevant teams in case of discrepancies."
     ],
-    technologies: ["React", "TypeScript", "Python", "Docker", "Bootstrap"],
+    technologies: ["Python", "Docker", "Kubernetes", "Arango DB", "React", "Next JS", "Express JS"],
     logo: pharmeasyLogo,
   },
   {
@@ -46,11 +48,13 @@ const EXPERIENCE: ExperienceItem[] = [
     role: "Application Developer",
     company: "Caterpillar",
     description: [
+      "Working on Python Scripting for Power Platform.",
+      "Working on Fast APIs",
       "Working on Power Platform Component Framework using React.",
       "Power Apps and Power Automate Development.",
-      "Working on Python Scripting for Power Platform."
+      
     ],
-    technologies: ["Python", "PowerApps", "PowerAutomate", "JavaScript", "Dataverse"],
+    technologies: ["Python", "React", "Docker","Cosmos DB","Azure", "PowerApps", "PowerAutomate", "JavaScript", "Dataverse"],
     logo: catLogo,
   },
 ];

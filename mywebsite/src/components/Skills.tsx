@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaJava, FaHtml5, FaCss3Alt, FaReact, FaAngular, FaDocker, FaGitAlt, FaLinux } from 'react-icons/fa';
-import { SiC, SiCplusplus, SiJavascript, SiKubernetes, SiFlask, SiMongodb, SiPowerapps, SiPowerautomate, SiTypescript, SiTensorflow, SiKeras, SiMysql, SiOracle, SiDataverse, SiPython } from 'react-icons/si';
+import { SiC, SiCplusplus, SiJavascript, SiKubernetes, SiDjango, SiMongodb, SiPowerapps, SiPowerautomate, SiTypescript, SiTensorflow, SiKeras, SiMysql, SiOracle, SiDataverse, SiPython, SiAnsible } from 'react-icons/si';
 import './Skill.css'; // Import your CSS file
 
 const Skills: React.FC = () => {
@@ -10,19 +10,20 @@ const Skills: React.FC = () => {
 
   const skills = [
     { name: 'Python', icon: <SiPython color="#3776AB" /> },
-    { name: 'Java', icon: <FaJava color="#007396" /> },
-    { name: 'C', icon: <SiC color="#A8B9CC" /> },
-    { name: 'C++', icon: <SiCplusplus color="#00599C" /> },
-    { name: 'JavaScript', icon: <SiJavascript color="#F7DF1E" /> },
+    { name: 'Docker', icon: <FaDocker color="#2496ED" /> },
+    { name: 'Kubernetes', icon: <SiKubernetes color="#326CE5" /> },
+    { name: 'Ansible', icon: <SiAnsible color="#EE0000" /> },
+    { name: 'Django', icon: <SiDjango color="#108207" /> },
+    { name: 'React', icon: <FaReact color="#61DAFB" /> },
     { name: 'TypeScript', icon: <SiTypescript color="#3178C6" /> },
+    { name: 'JavaScript', icon: <SiJavascript color="#F7DF1E" /> },
+    { name: 'Java', icon: <FaJava color="#007396" /> },
     { name: 'HTML', icon: <FaHtml5 color="#E34F26" /> },
     { name: 'CSS', icon: <FaCss3Alt color="#1572B6" /> },
-    { name: 'React', icon: <FaReact color="#61DAFB" /> },
     { name: 'Angular', icon: <FaAngular color="#DD0031" /> },
-    { name: 'Kubernetes', icon: <SiKubernetes color="#326CE5" /> },
-    { name: 'Docker', icon: <FaDocker color="#2496ED" /> },
+    { name: 'C', icon: <SiC color="#A8B9CC" /> },
+    { name: 'C++', icon: <SiCplusplus color="#00599C" /> },
     { name: 'Git', icon: <FaGitAlt color="#F05032" /> },
-    { name: 'Flask', icon: <SiFlask /> },
     { name: 'MongoDB', icon: <SiMongodb color="#47A248" /> },
     { name: 'MySQL', icon: <SiMysql color="#4479A1" /> },
     { name: 'Oracle', icon: <SiOracle color="#F80F0F" /> },

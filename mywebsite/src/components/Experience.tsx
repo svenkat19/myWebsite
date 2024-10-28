@@ -45,7 +45,7 @@ const EXPERIENCE: ExperienceItem[] = [
   },
   {
     year: "JUL 2024 - CURRENT",
-    role: "Application Developer",
+    role: "IT Application Developer and Analyst",
     company: "Caterpillar",
     description: [
       "Working on Python Scripting for Power Platform.",

@@ -12,7 +12,6 @@ const Skills: React.FC = () => {
     { name: 'Python', icon: <SiPython color="#3776AB" /> },
     { name: 'Docker', icon: <FaDocker color="#2496ED" /> },
     { name: 'Kubernetes', icon: <SiKubernetes color="#326CE5" /> },
-    { name: 'Ansible', icon: <SiAnsible color="#EE0000" /> },
     { name: 'Django', icon: <SiDjango color="#108207" /> },
     { name: 'React', icon: <FaReact color="#61DAFB" /> },
     { name: 'TypeScript', icon: <SiTypescript color="#3178C6" /> },
